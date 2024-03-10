@@ -36,9 +36,7 @@ class CheckinListener{
         $userID = $user->id;
         //check permissions
         if(!$allowCheckin){
-            throw new ValidationException([
-                'message' => $this->translator->trans('gtdxyz-checkin.forum.errors.permission')
-            ]);
+            return false;
         }
 
         //daily reward
@@ -71,9 +69,10 @@ class CheckinListener{
             $checkin_today = Carbon::parse($last_history->checkin_time)->isToday();
             //finished checkin today
             if($checkin_today){
-                throw new ValidationException([
-                    'message' => $this->translator->trans('gtdxyz-checkin.forum.errors.today-has-checkin')
-                ]);
+                return false;
+                // throw new ValidationException([
+                //     'message' => $this->translator->trans('gtdxyz-checkin.forum.errors.today-has-checkin')
+                // ]);
             }
             
             //get constant 6 days checkin data

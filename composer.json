@@ -1,0 +1,35 @@
+{
+    "name": "gtdxyz/flarum-ext-checkin",
+    "description": "Flarum Checkin extension.",
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^1.8"
+    },
+    "support": {
+        "source": "https://github.com/daocatt/flarum-ext-checkin"
+    },
+    "authors": [
+        {
+            "name": "Dev",
+            "email": "dev@gtd.xyz"
+        }
+    ],
+    "extra": {
+        "flarum-extension": {
+            "title": "Checkin",
+            "icon": {
+                "name": "fas fa-calendar-alt",
+                "backgroundColor": "#33722d",
+                "color": "#fff"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Gtdxyz\\Checkin\\": "src/"
+        }
+    }
+}

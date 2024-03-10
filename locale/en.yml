@@ -1,0 +1,46 @@
+gtdxyz-checkin:
+  forum:
+    checkin: Checkin
+    checked-day: Checkin {count} Day
+    checked-days: Checkin {count} Days
+    success: Checkin Success
+    failed: Checkin Failed
+    try-again-later: Please try again later
+    empty-text: Empty Checkin
+    reward-text: Get Checkin Reward Today!
+    count-text: Checkin {count} days this week
+    constant-recent-count-text: Last constantly days {count}
+    source-desc: Checkin
+    errors:
+      permission: Checkin without permission
+      today-has-checkin: Already Checkin today
+      after-period-time: Please checkin later
+  admin:
+    settings:
+      position: Checkin Position
+      reward: Daily Checkin Rward money
+      constant: Constantly Checkin
+      constant-force: Force constantly
+      constant-none: None
+      constant-byday: By days
+      constant-byweekday: By weekday in same week
+      constant-help: Reward for constantly days, if by weekday, will reset on Monday morning
+      constant-days: Constantly Days
+      constant-reward: Constantly reward money
+      auto: Auto Checkin
+      success-type: Checkin success Alert
+      success-text: Checkin Success text
+      success-reward-text: Checkin Success Reward Text
+      require-install: Require install extension
+      success-example-text: 'Example: You have checkin for [days] days'
+      success-example-reward-text: 'Example: Gained reward [reward]'
+
+      allow-checkin: Allow checkin
+      validation:
+        number: Number needs to be greater than zero
+
+      sidebar: SideNav
+      headbar: HeadMenu
+      None: None
+      Alert: Alert
+      Modal: Modal

@@ -1,0 +1,46 @@
+gtdxyz-checkin:
+  forum:
+    checkin: 签到
+    checked-day: 已签到 {count} 天
+    checked-days: 已签到 {count} 天
+    success: 签到成功
+    failed: 签到失败
+    try-again-later: 请稍后重试
+    empty-text: 无签到记录
+    reward-text: 签到领取今日奖励!
+    count-text: 本周签到 {count} 天
+    constant-recent-count-text: 最近连续签到 {count} 天
+    source-desc: 签到奖励
+    errors:
+      permission: 无签到权限
+      today-has-checkin: 今日已签到
+      after-period-time: 请稍后再签到
+  admin:
+    settings:
+      position: 显示位置
+      reward: 每日签到奖励
+      constant: 连续签到
+      constant-force: 强制连续（一周内天数），不能中断,例如一周内签到4天，，周1，3，4，5签到不符合连续
+      constant-none: 关闭连续签到
+      constant-byday: 按天数连续签到
+      constant-byweekday: 按一周内天数连续签到
+      constant-help: 完成连续签到给予额外奖励，如果按一周内天数连续签到, 则每周一重新计算天数，需要在一周内完成连续签到，一般设置不超过7天
+      constant-days: 连续签到天数
+      constant-reward: 连续签到奖励
+      auto: 自动签到
+      success-type: 签到提示
+      success-text: 签到成功提示
+      success-reward-text: 签到奖励提示
+      require-install: 需要安装插件
+      success-example-text: '示例: 已签到 [days] 天'
+      success-example-reward-text: '示例: 获得奖励 [reward]'
+
+      allow-checkin: 允许签到
+      validation:
+        number: 数字应该设置成不小于0
+
+      sidebar: 侧边栏
+      headbar: 顶部菜单
+      None: None
+      Alert: Alert
+      Modal: Modal

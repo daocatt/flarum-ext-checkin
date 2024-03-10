@@ -1,0 +1,154 @@
+.item-forum-checkin>.Button{ width:100%; }
+
+@media @phone {
+  .item-forum-checkin{
+      right:37px;
+  }
+  .item-forum-checkin>.Button{ width:40px;}
+}
+
+.NotificationList.CheckinList{
+  .NotificationList-content{
+    display:flex;
+    flex-direction: column;
+    padding:15px 10px;
+    gap: 15px;
+    .subtitle{
+      text-align:center;
+      font-weight:bold;
+    }
+    .NotificationGroup-content{
+      display:flex;
+      flex-direction: row;
+      align-content: space-around;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      > li{
+        // border:1px solid #555;
+        // border-radius: 50%;
+        text-align: center;
+        padding: 5px 2px;
+        width:14.285714%;
+        
+        .Notification-content{
+          margin:0;
+          padding:8px 0;
+          background:#f5f5f5;
+          font-size:11px;
+          border-radius: 8px;
+          span{
+            // &:first-child{
+            //   color: rgba(255,255,255,0.7);
+            // }
+            color:#999;
+            display:block;
+            width:100%;
+          }
+        }
+        .Notification-excerpt{
+          display: none;;
+          padding:8px 0px;
+          color: #999;
+          background: #fff;
+          border-radius: 0 0 6px 6px;
+          border:1px solid #555;
+        }
+        &.checked{
+          .Notification-content{
+            background: #ff4500;
+            span{
+              color:#fff;
+            }
+          }
+          .Notification-excerpt{
+            color: #fda84d;
+          }
+        }
+        &.count-1{
+          flex:inherit;
+          width: 30%;
+          margin: 0 auto;
+        }
+        &.count-2{
+          width:50%;
+        }
+        &.count-3{
+          width:33.33%
+        }
+        &.count-4{
+          width:25%
+        }
+        &.count-5{
+          width:20%
+        }
+        &.count-6{
+          width:16.666666%
+        }
+        &.count-7{
+          width:14.285714%
+        }
+        &.count-8{
+          width:14.285714%
+        }
+        &.count-9{
+          width:14.285714%
+        }
+        &.count-10{
+          width:14.285714%
+        }
+      }
+      .NotificationList-empty{
+        width:100%;
+        padding:10px 0;
+        font-size:12px;
+      }
+    }
+    .CheckinButton{
+      width:100%;
+    }
+  }
+}
+
+.Checkin-page{
+  background:#fff;
+  
+}
+
+.CheckinButton--checked {background-color:#bb934f;color:#fff;}
+.CheckinButton--checked:focus {background-color:#bb934f;color:#fff}
+.CheckinButton--checked:hover {background-color:#98763c;}
+.CheckinButton--checked:active {background-color:#98763c;}
+.CheckinButton--checked:disabled {background-color:#bb8a5a;}
+
+.CheckinButton--active {background-color:#35c85e;color:#fff;}
+.CheckinButton--active:focus {background-color:#35c85e;color:#fff}
+.CheckinButton--active:hover {background-color:#28a34b;}
+.CheckinButton--active:active {background-color:#28a34b;}
+.CheckinButton--active:disabled {background-color:#8e8e8e;}
+
+.CheckinModal .successTitle{
+  font-size:1rem;
+  color:#33722d;
+}
+
+.CheckinModal .failedTitle{
+  font-size:1rem;
+  color:red;
+}
+
+.CheckinModal .hideText{
+  display:none;
+}
+
+.CheckinModal .successText{
+    font-size:20px;
+    color:var(--primary-color);
+    text-align:center;
+    padding:5px 0px;
+}
+
+.CheckinModal .rewardText{
+    font-size:16px;
+    padding:5px 0px;
+    text-align:center;
+}

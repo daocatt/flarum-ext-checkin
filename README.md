@@ -30,3 +30,10 @@ composer require gtdxyz/flarum-ext-money-plus
 
 - [Github](https://github.com/daocatt/flarum-ext-checkin)
 - [Packagist](https://packagist.org/packages/gtdxyz/flarum-ext-checkin)
+
+
+### Screenshots
+
+![1](https://i.imgur.com/AdZbViA.png)
+![2](https://i.imgur.com/gnogbrB.png)
+![3](https://i.imgur.com/IMgxLQy.jpeg)

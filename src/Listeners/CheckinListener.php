@@ -34,9 +34,11 @@ class CheckinListener{
         $user = $event->user;
         $allowCheckin = $actor->can('checkin.allowCheckin', $user);
 
+        $attributes = Arr::get($event->data, 'attributes', []);
         
         //check permissions
-        if($allowCheckin){
+        if($allowCheckin && Arr::has($attributes, "checkin_days_count") && is_int($attributes['checkin_days_count'])){
+
             $userID = $user->id;    
             //daily reward
             $daily_reward = $this->settings->get('gtdxyz-checkin.reward', 0);
@@ -68,7 +70,7 @@ class CheckinListener{
                 $checkin_today = Carbon::parse($last_history->checkin_time)->isToday();
                 //finished checkin today
                 if($checkin_today){
-                    return false;
+                    return;
                     // throw new ValidationException([
                     //     'message' => $this->translator->trans('gtdxyz-checkin.forum.errors.today-has-checkin')
                     // ]);
@@ -110,9 +112,7 @@ class CheckinListener{
             
 
             if(!$checkin_today){
-
-                $attributes = Arr::get($event->data, 'attributes', []);
-
+                
                 $checkin_time = Carbon::now()->format('Y-m-d H:i:s');
                 $reward_money = $daily_reward;
                 $type = 'N';

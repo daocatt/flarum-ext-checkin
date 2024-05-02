@@ -4,6 +4,7 @@ namespace Gtdxyz\Checkin\Listeners;
 
 use Carbon\Carbon;
 use Illuminate\Database\ConnectionInterface;
+use Illuminate\Database\Query\Grammars\Grammar;
 use Flarum\Foundation\ValidationException;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Flarum\Settings\SettingsRepositoryInterface;
@@ -20,16 +21,18 @@ class CheckinListener{
     protected $events;
     protected $translator;
     protected $db;
+    protected $grammar;
 
-    public function __construct(SettingsRepositoryInterface $settings, ConnectionInterface $connection, Dispatcher $events, TranslatorInterface $translator){
+    public function __construct(SettingsRepositoryInterface $settings, ConnectionInterface $connection, Grammar $grammar, Dispatcher $events, TranslatorInterface $translator){
         $this->settings = $settings;
         $this->events = $events;
         $this->translator = $translator;
         $this->db = $connection;
+        $this->grammar = $grammar;
     }
 
     public function checkinSaving(Saving $event){
-        
+
         $actor = $event->actor;
         $user = $event->user;
         $allowCheckin = $actor->can('checkin.allowCheckin', $user);
@@ -82,7 +85,7 @@ class CheckinListener{
                     if($constant_force) {
                         $sql = "select user_id, checkin_time, check_days from";
                         $sql .= " (select user_id, checkin_time, constant, @pre_check := IF(constant, @pre_check+1, 0) as 'check_days'";
-                        $sql .= " from user_checkin_history, (select @pre_check :=0) init where user_id={$userID}";
+                        $sql .= " from ".$this->grammar->getTablePrefix()?$this->grammar->getTablePrefix().".":""."user_checkin_history, (select @pre_check :=0) init where user_id={$userID}";
                         $sql .= " and checkin_time > '{$start_date}' and checkin_time < '{$end_date}'";
                         $sql .= " ) tmp ";
                         $sql .= "order by checkin_time desc limit 1";
